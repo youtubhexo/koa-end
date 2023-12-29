@@ -10,6 +10,14 @@ router.get('/', (ctx, next) => {
   // ctx.router available
   ctx.body = 'Hello World123';
 });
+
+router.get("/async", async (ctx) => {
+   ctx.body=await  new Promise((resolve) => {
+     setTimeout(() => {
+       resolve("async")
+     }, 5000)
+   })
+})
 app
   .use(router.routes())
   .use(router.allowedMethods());
