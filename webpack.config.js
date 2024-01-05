@@ -13,15 +13,15 @@ const webpackconfig = {
   },
   devtool:'eval-source-map',
   module: {
-    // rules: [
-      // {
-        // test: /\.(js|jsx)$/,
-        // use: {
-          // loader:'babel-loader'
-        // },
-        // exclude:[path.join(__dirname,"./node_modules")]
-      // }
-    // ]
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        use: {
+          loader:'babel-loader'
+        },
+        exclude:[path.join(__dirname,"./node_modules")]
+      }
+    ]
   },
   externals: [nodeExcternals()],
   plugins: [

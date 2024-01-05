@@ -1,4 +1,5 @@
-const Koa = require('koa');
+//const Koa = require('koa');
+import Koa from 'koa'
 const Router = require('@koa/router');
 const { koaBody } = require('koa-body');
 const json = require('koa-json');
