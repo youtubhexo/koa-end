@@ -59,6 +59,7 @@ const middleware = compose([
   router.routes(),
   router.allowedMethods()
 ])
+app.use(middleware)
 app.listen(3000, () => {
   console.log('Koa server is running on http://localhost:3000');
 });
