@@ -6,8 +6,9 @@
   "scripts": {
     "run": "node src/index.js",
     "dev": " npx nodemon  --exec babel-node src/index.js",
-    "middleware-demo": "node src/middleware.js"
-    },
+    "middleware-demo": "node src/middleware.js",
+    "webpack-debug": "node --inspect-brk ./node_modules/webpack/bin/webpack.js --inline --progress"
+  },
   "keywords": [],
   "author": "",
   "license": "MIT",
