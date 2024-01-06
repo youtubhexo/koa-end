@@ -18,6 +18,7 @@
     "koa": "^2.14.2",
     "koa-body": "^6.0.1",
     "koa-combine-routers": "^4.0.2",
+    "koa-compose": "^4.1.0",
     "koa-helmet": "^7.0.2",
     "koa-json": "^2.0.2",
     "koa-static": "^5.0.0"

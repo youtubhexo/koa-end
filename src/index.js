@@ -6,6 +6,7 @@ const json = require('koa-json');
 const combineRouter = require('./routers/router')
 const serve = require('koa-static');
 const path = require('path');
+import compose from 'koa-compose'
 // koa-helmet 实际上是一系列安全相关中间件的集合，每个中间件都负责设置一个特定的 HTTP 头部。例如，它可以设置如下的HTTP头部：
 // 
 // Content-Security-Policy (CSP)：限制资源（例如脚本、图片等）的来源，帮助防止跨站点脚本攻击 (XSS)。
@@ -48,14 +49,16 @@ router.post('/api/data', (ctx) => {
   };
 });
 
-app
-  .use(helmet())
-  .use(koaBody())
-  .use(json())
-  .use(serve(path.join(__dirname, '../public')))
-  .use(combineRouter())
-  .use(router.routes())
-  .use(router.allowedMethods());
+// 组合给定的中间件并返回中间件。 koa-compose
+const middleware = compose([
+  helmet(),
+  koaBody(),
+  json(),
+  serve(path.join(__dirname, '../public')),
+  combineRouter(),
+  router.routes(),
+  router.allowedMethods()
+])
 app.listen(3000, () => {
   console.log('Koa server is running on http://localhost:3000');
 });
