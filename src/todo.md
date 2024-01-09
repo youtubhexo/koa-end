@@ -3,3 +3,5 @@
 ### npm-check-updates
 
 ### koa-compose
+
+koa-compress

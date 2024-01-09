@@ -50,7 +50,7 @@ router.post('/api/data', (ctx) => {
   };
 });
 
-const isDevMode=preocess.env.NODE_ENV==='production'?true:false
+const isDevMode=process.env.NODE_ENV==='production'?true:false
 // 组合给定的中间件并返回中间件。 koa-compose
 const middleware = compose([
   helmet(),
